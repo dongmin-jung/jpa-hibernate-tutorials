@@ -22,6 +22,12 @@ public class TasteZipController {
         return tasteZipRepository.findAll(pageable);
     }
 
+    @GetMapping("/tastezips/{id}")
+    public TasteZip getTasteZipById(@PathVariable(value = "id") Long tasteZipId) {
+        return tasteZipRepository.findById(tasteZipId)
+                .orElseThrow(() -> new ResourceNotFoundException("TasteZipId " + tasteZipId + " not found"));
+    }
+
     @PostMapping("/tastezips")
     public TasteZip createTasteZip(@Valid @RequestBody TasteZip tasteZip) {
         return tasteZipRepository.save(tasteZip);
