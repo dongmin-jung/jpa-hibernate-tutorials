@@ -4,6 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import java.math.BigDecimal;
+
 /**
  * Created by rajeevkumarsingh on 21/11/17.
  */
@@ -43,11 +45,12 @@ public class TasteZip extends AuditModel {
     @Lob
     private String map_url;
 
-    private Float avg_rating;
+    private BigDecimal avg_rating;
 
     private Integer num_orders;
 
-    private Float rank;
+    private BigDecimal rank_score;
+    
 
     // @NotNull
     // @Lob
@@ -133,11 +136,11 @@ public class TasteZip extends AuditModel {
         this.map_url = map_url;
     }
 
-    public Float getAvgRating() {
+    public BigDecimal getAvgRating() {
         return avg_rating;
     }
 
-    public void setAvgRating(Float avg_rating) {
+    public void setAvgRating(BigDecimal avg_rating) {
         this.avg_rating = avg_rating;
     }
 
@@ -149,12 +152,12 @@ public class TasteZip extends AuditModel {
         this.num_orders = num_orders;
     }
 
-    public Float getRank() {
-        return rank;
+    public BigDecimal getRankScore() {
+        return rank_score;
     }
 
-    public void setRank(Float rank) {
-        this.rank = rank;
+    public void setRankScore(BigDecimal rank_score) {
+        this.rank_score = rank_score;
     }
 
 }

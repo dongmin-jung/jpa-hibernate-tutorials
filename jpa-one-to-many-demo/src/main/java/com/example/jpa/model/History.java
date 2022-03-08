@@ -9,6 +9,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.math.BigDecimal;
+
 /**
  * Created by rajeevkumarsingh on 21/11/17.
  */
@@ -35,7 +37,7 @@ public class History extends AuditModel {
     @Lob
     private String comment;
 
-    private Float rating;
+    private BigDecimal rating;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "tastezip_id", nullable = false)
@@ -101,11 +103,11 @@ public class History extends AuditModel {
         this.comment = comment;
     }
 
-    public Float getRating() {
+    public BigDecimal getRating() {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating(BigDecimal rating) {
         this.rating = rating;
     }
 

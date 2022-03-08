@@ -41,7 +41,7 @@ public class TasteZipController {
             tasteZip.setMapUrl(tasteZipRequest.getMapUrl());
             // tasteZip.setAvgRating(tasteZipRequest.getAvgRating());
             // tasteZip.setNumOrders(tasteZipRequest.getNumOrders());
-            // tasteZip.setRank(tasteZipRequest.getRank());
+            // tasteZip.setRankScore(tasteZipRequest.getRankScore());
             return tasteZipRepository.save(tasteZip);
         }).orElseThrow(() -> new ResourceNotFoundException("TasteZipId " + tasteZipId + " not found"));
     }
